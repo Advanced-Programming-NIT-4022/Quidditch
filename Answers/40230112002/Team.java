@@ -16,6 +16,7 @@ public class Team {
         this.beater1 = beater1;
         this.beaser2 = beater2;
         this.goals = 0;
+
     }
 
 
