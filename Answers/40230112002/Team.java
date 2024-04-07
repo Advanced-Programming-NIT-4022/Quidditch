@@ -18,6 +18,7 @@ public class Team {
     public void play(){
         if(keeper.isSuccessful() && seeker.isSuccessful() && (beater1.isSuccessful() || beaser2.isSuccessful()) && (chaser1.isSuccessful())|| chaser2.isSuccessful() || chaser3.isSuccessful()){
             setGoals();
+
         }
     }
 
