@@ -1,7 +1,7 @@
 public class MyApp {
     Match match= new Match();
     public void match (){
-        for (int i=0 ; i<100 ; i++){
+        for (int i=0 ; i<10 ; i++){
             match.start();
             boolean seeker1 = match.team1.seeker.isSuccessful() ;
             boolean seeker2 = match.team2.seeker.isSuccessful() ;
@@ -10,15 +10,12 @@ public class MyApp {
                     continue;
             }
             else if(seeker1){
-                for (int j=0 ; j <150 ;j++){
-                    match.team1.goals = match.team1.setGoal(match.team1.goals);
-                }
+                    match.team1.goals = match.team1.goals +150;
                 break;
             }
             else {
-                for (int j=0 ; j <150 ;j++){
-                match.team2.goals = match.team2.setGoal(match.team2.goals);
-            }
+                match.team2.goals = match.team2.goals +150;
+
                 break;
             }
         }
