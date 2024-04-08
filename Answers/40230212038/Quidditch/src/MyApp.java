@@ -1,7 +1,7 @@
 public class MyApp {
     Match match= new Match();
     public void match (){
-        for (int i=0 ; i<10 ; i++){
+        for (int i=0 ; i<100 ; i++){
             match.start();
             boolean seeker1 = match.team1.seeker.isSuccessful() ;
             boolean seeker2 = match.team2.seeker.isSuccessful() ;
