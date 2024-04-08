@@ -42,4 +42,9 @@ public class Team {
         }
     }
 
+    public int getScore()
+    {
+        return this.goal;
+    }
+
 }
