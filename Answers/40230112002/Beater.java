@@ -4,7 +4,6 @@ public class Beater extends Player implements Success{
 
     @Override
     public boolean isSuccessful() {
-        Random rand = new Random();
-        return rand.nextInt(0 , 10) >= 4;
+        return Math.random() < 0.4;
     }
 }

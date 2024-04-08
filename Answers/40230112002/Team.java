@@ -9,7 +9,7 @@ public class Team {
     private Beater beaser2;
     private int goals;
 
-    public Team(Keeper keeper, Seeker seeker, Chaser[] chasers, Beater beater1 , Beater beater2) {
+    public Team(Keeper keeper, Seeker seeker, Chaser[] chasers, Beater beater1, Beater beater2) {
         this.keeper = keeper;
         this.seeker = seeker;
         this.chasers = chasers;
@@ -20,24 +20,25 @@ public class Team {
     }
 
 
-    private void setGoals(){
+    private void setGoals() {
         goals++;
     }
 
-    private boolean twoChasersSuccess(){
+    private boolean twoChasersSuccess() {
         int count = 0;
-        for(Chaser chaser : chasers){
-            if(chaser.isSuccessful()){
+        for (Chaser chaser : chasers) {
+            if (chaser.isSuccessful()) {
                 count++;
             }
-            if(count >= 2){
+            if (count >= 2) {
                 return true;
             }
         }
         return false;
     }
-    public void play(){
-        if(keeper.isSuccessful() && seeker.isSuccessful() && (beater1.isSuccessful() || beaser2.isSuccessful()) && twoChasersSuccess()){
+
+    public void play() {
+        if (keeper.isSuccessful() && seeker.isSuccessful() && (beater1.isSuccessful() || beaser2.isSuccessful()) && twoChasersSuccess()) {
             setGoals();
 
         }
