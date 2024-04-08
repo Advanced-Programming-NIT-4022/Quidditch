@@ -42,6 +42,11 @@ public class Team {
         }
     }
 
+    public void resetGoal()
+    {
+        this.goal = 0;
+    }
+
     public int getScore()
     {
         return this.goal;

@@ -45,16 +45,20 @@ public class Match {
             team_1.play();
             team_2.play();
             scorePreview();
+            team_1.resetGoal();
+            team_2.resetGoal();
         }
         else
         {
             if(this.sk1)
             {
                 System.out.println("Team-1 wins , 150 points");
+                team_1.resetGoal();
             }
             else
             {
                 System.out.println("Team-2 wins , 150 points");
+                team_2.resetGoal();
             }
 
         }
