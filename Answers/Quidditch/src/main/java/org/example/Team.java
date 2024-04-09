@@ -9,14 +9,16 @@ public class Team {
     Chaser chaser2 = new Chaser();
     Chaser chaser3 = new Chaser();
     int Goal = 0;
-
+    boolean GotSnitch = false;
     void setGoal() {
         Goal++;
     }
-
     void Play() {
         keeper.isSuccess();
         seeker.isSuccess();
+        if(seeker.isSuccessful){
+            GotSnitch = true;
+        }
         beater1.isSuccess();
         beater2.isSuccess();
         chaser1.isSuccess();
@@ -33,7 +35,7 @@ public class Team {
             setGoal();
         }
         keeper.isSuccessful = false;
-        seeker.isSuccessful = false;
+
         beater1.isSuccessful = false;
         beater2.isSuccessful = false;
         chaser1.isSuccessful = false;
