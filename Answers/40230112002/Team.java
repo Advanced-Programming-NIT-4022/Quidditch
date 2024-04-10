@@ -38,7 +38,7 @@ public class Team {
     }
 
     public void play() {
-        if (keeper.isSuccessful() && seeker.isSuccessful() && (beater1.isSuccessful() || beaser2.isSuccessful()) && twoChasersSuccess()) {
+        if (keeper.isSuccessful() &&  (beater1.isSuccessful() || beaser2.isSuccessful()) && twoChasersSuccess()) {
             setGoals();
 
         }
@@ -46,5 +46,17 @@ public class Team {
 
     public int getGoals() {
         return goals;
+    }
+
+
+    public boolean goldenSnitch()
+    {
+        if(seeker.isSuccessful())
+        {
+            this.goals += 150;
+            return true;
+        }
+        return false;
+
     }
 }

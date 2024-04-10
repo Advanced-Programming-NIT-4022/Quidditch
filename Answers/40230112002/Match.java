@@ -11,9 +11,15 @@ public class Match {
 
     public void start() {
         for (int i = 0; i < 100; i++) {
-            team1.play();
-            team2.play();
+            if(team1.goldenSnitch()){
+                break;
             }
+            team1.play();
+            if(team2.goldenSnitch()){
+                break;
+            }
+            team2.play();
+        }
 
         System.out.println("Team 1 goals: " + team1.getGoals());
         System.out.println("Team 2 goals: " + team2.getGoals());
