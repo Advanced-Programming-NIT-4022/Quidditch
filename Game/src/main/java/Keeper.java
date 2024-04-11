@@ -5,6 +5,6 @@ class Keeper extends Player {
     }
     @Override
     public boolean isSuccessful(){
-        return false;
+        return new Random().nextInt(100) < 70;
     }
 }
