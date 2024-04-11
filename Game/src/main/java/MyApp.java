@@ -21,6 +21,10 @@ public class MyApp {
         Team team2 = new Team(keeper2, seeker2, chasers2, beaters2);
 
         Match match = new Match(team1, team2);
-        match.start();
+        for(int i=0 ; i<100 ; i++){
+            System.out.println("Match " + (i + 1) + ":");
+            match.start();
+            System.out.println();
+        }
     }
 }
