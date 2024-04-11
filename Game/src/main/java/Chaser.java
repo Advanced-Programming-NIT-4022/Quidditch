@@ -6,6 +6,6 @@ class Chaser extends Player{
     }
     @Override
     public boolean isSuccessful(){
-        return new Random().nextInt(100) < 5;
+        return new Random().nextInt(100) < 30;
     }
 }
