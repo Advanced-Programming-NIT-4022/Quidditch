@@ -6,7 +6,7 @@ public class Keeper extends Player implements Success {
     public boolean isSuccessful(boolean t) {
         Random tas=new Random();
         int g=tas.nextInt(100)+1;
-        if (g>=95) {
+        if (g>=30) {
             t=true;
         }
         return t;
