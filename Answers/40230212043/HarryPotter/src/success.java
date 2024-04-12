@@ -1,3 +1,3 @@
-public interface success {
-    public boolean isSuccess ();
+public interface Success {
+    public boolean isSuccessful(boolean t);
 }

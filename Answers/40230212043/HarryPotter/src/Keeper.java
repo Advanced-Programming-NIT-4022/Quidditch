@@ -1,6 +1,6 @@
 import java.util.Random;
-public class Seeker extends Player implements Success {
-    public Seeker (int sh,String num) {
+public class Keeper extends Player implements Success {
+    public Keeper (int sh,String num) {
         super(sh,num);
     }
     public boolean isSuccessful(boolean t) {
