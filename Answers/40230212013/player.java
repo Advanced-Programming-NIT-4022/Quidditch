@@ -12,5 +12,5 @@ public abstract class player {
   public int getNumber() {
     return number;
   }
-  public abstract boolean isSecessfull();
+  public abstract boolean isSuccessfull();
 }
