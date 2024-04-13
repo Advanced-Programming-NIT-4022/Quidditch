@@ -97,3 +97,34 @@ class Team{
         this.seeker=seeker;
     }
 }
+class Match{
+    private Team team1;
+    private Team team2;
+    public Match(Team team1 ,Team team2){
+        this.team1=team1;
+        this.team2=team2;
+    }
+    public void Start(){
+        for (int round=1;round<=100;round++){
+            System.out.print("Round "+round);
+            team1.Play();
+            team2.Play();
+            System.out.print(team2.getTeamName()+"Goals: "+team2.getGoalsScored());
+            if(team1.getSeeker().isSuccessful()){
+                System.out.print(team1.getTeamName()+" Seeker found the Snitch! "+team1.getTeamName()+" wins!");
+                break;
+            } else if (team2.getSeeker().isSuccessful()) {
+                System.out.print(team2.getTeamName()+" Seeker found the Snitch! "+team2.getTeamName()+" wins!");
+                break;
+            }
+            System.out.println();
+        }
+        if (team1.getGoalsScored() > team2.getGoalsScored()){
+            System.out.println(team1.getTeamName()+" wins!");
+        } else if (team1.getGoalsScored() < team2.getGoalsScored()) {
+            System.out.println(team2.getTeamName()+" wins!");
+        }else {
+            System.out.println("It's a Draw!");
+        }
+    }
+}
