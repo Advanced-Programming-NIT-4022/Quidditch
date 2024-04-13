@@ -128,3 +128,33 @@ class Match{
         }
     }
 }
+public class MyApp {
+    public static void main(String[] args){
+    Keeper keeper1 =new Keeper("Oliver Wood", 1);
+    Keeper keeper2=new Keeper("Harry Potter", 7);
+    Chaser[] chasers1=new Chaser[]{
+            new Chaser("Angelina Johnson", 6),
+            new Chaser("Fred Weasley", 14),
+            new Chaser("George Weasley", 15)
+    };
+    Beater beaters1 =new Beater[]{
+            new Beater("Alicia Spinnet", 20),
+            new Beater("Katie Bell", 21)
+    };
+    Team team1=new Team("Gryffindor", keeper1, seeker1, chasers1, beaters1);
+    Keeper keeper2=new Keeper("Miles Bletchley", 1);
+    Keeper keeper2=new Keeper("Cho Chang", 14);
+    Chaser chasers2=new Chaser[]{
+            new Chaser("Draco Malfoy", 14);
+            new Chaser("Vincent Crabbe", 18);
+            new Chaser("Gregory Goyle", 19)
+    };
+    Beater beaters2 =new Beater[]{
+            new Beater("Marcus Flint", 7);
+            new Beater("Adrian Pukey", 8);
+    };
+    Team team2=new Team("Slytherin", keeper2, seeker2, chasers2, beaters2);
+    Match match=new Match(team1,team2);
+    match.start();
+    }
+}
