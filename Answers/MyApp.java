@@ -25,3 +25,33 @@ class Keeper extends Player implements Success{
         return Math.random()<Save_Chance;
     }
 }
+class Seeker extends Player implements Success{
+    private static final double Snitch_Chance=0.05;
+    public Seeker(String name,int number){
+        super(name,number);
+    }
+    @Override
+    public boolean isSuccessful(){
+        return Math.random() < Snitch_Chance;
+    }
+}
+class Chaser extends Player implements Success{
+    private static final double Score_Chance=0.3;
+    public Chaser(String name,int number){
+        super(name, number);
+    }
+    @Override
+    public boolean isSuccessful(){
+        return Math.random() < Score_Chance;
+    }
+}
+class Beater extends Player implements Success{
+    private static final double = Stop_Chance=0.4;
+    public Beater(String name,int number){
+        super(name, number);
+    }
+    @Override
+    public boolean isSuccessful(){
+        return Math.random() < Stop_Chance;
+    }
+}
