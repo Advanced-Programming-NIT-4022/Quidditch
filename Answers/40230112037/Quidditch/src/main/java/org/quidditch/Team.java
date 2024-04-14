@@ -1,19 +1,22 @@
 package org.quidditch;
 
 public class Team {
-    Keeper keeper = new Keeper();
-    Seeker seeker = new Seeker();
+    final String name;
+    Keeper keeper;
+    Seeker seeker;
     Chaser[] chaser = new Chaser[3];
     Beater[] beater = new Beater[2];
     private int goals;
 
-    public Team() {
-        for (int i = 0; i < this.chaser.length; i++) {
-            this.chaser[i] = new Chaser();
-        }
-        for (int i = 0; i < this.beater.length; i++) {
-            this.beater[i] = new Beater();
-        }
+    public Team(String name, String[] playerNames) {
+        this.name = name;
+        this.keeper = new Keeper(playerNames[0], 1);
+        this.seeker = new Seeker(playerNames[1], 2);
+        this.chaser[0] = new Chaser(playerNames[2], 3);
+        this.chaser[1] = new Chaser(playerNames[3], 4);
+        this.chaser[2] = new Chaser(playerNames[4], 5);
+        this.beater[0] = new Beater(playerNames[5], 6);
+        this.beater[1] = new Beater(playerNames[6], 7);
         this.goals = 0;
     }
 

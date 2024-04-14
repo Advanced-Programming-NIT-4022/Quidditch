@@ -5,18 +5,16 @@ public class Match {
     int currentRound;
     int numberOfRounds;
 
-    Match() {
+    Match(String team1Name, String[] team1PlayerNames, String team2Name, String[] team2PlayerNames) {
         this.numberOfRounds = 150;
-        for (int i = 0; i < this.team.length; i++) {
-            this.team[i] = new Team();
-        }
+        team[0] = new Team(team1Name, team1PlayerNames);
+        team[1] = new Team(team2Name, team2PlayerNames);
     }
 
-    Match(int rounds) {
+    Match(int rounds, String team1Name, String[] team1PlayerNames, String team2Name, String[] team2PlayerNames) {
         this.numberOfRounds = rounds;
-        for (int i = 0; i < this.team.length; i++) {
-            this.team[i] = new Team();
-        }
+        team[0] = new Team(team1Name, team1PlayerNames);
+        team[1] = new Team(team2Name, team2PlayerNames);
     }
 
     void start() {
@@ -29,23 +27,23 @@ public class Match {
     }
 
     void printTheResults() {
-        boolean snitchCaught=false;
-        for(Team team:this.team){
-            if(team.seekerPlayWasSuccessful()){
-                System.out.println("Team 1 has caught the snitch and wins!");
-                snitchCaught=true;
+        boolean snitchCaught = false;
+        for (Team team : this.team) {
+            if (team.seekerPlayWasSuccessful()) {
+                System.out.printf("%s from %s has caught the snitch and wins!", team.seeker.name, team.name);
+                snitchCaught = true;
                 break;
             }
         }
-        if(!snitchCaught) {
+        if (!snitchCaught) {
 
             if (this.team[0].getGoals() != this.team[1].getGoals()) {
-                System.out.printf("Team %d wins!\n", (this.team[0].getGoals() > this.team[1].getGoals()) ? 1 : 2);
+                System.out.printf("Team %s wins!\n", (this.team[0].getGoals() > this.team[1].getGoals()) ? this.team[0].name : this.team[1].name);
             } else {
                 System.out.println("Draw!");
             }
         }
-        System.out.printf("Results:\tTeam 1: %d\t Team 2: %d", this.team[0].getGoals(), this.team[1].getGoals());
+        System.out.printf("Results:\t%s: %d\t %s: %d", this.team[0].name, this.team[0].getGoals(), this.team[1].name, this.team[1].getGoals());
     }
 
 }
