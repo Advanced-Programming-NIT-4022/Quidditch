@@ -1,20 +1,14 @@
+import java.util.Random;
+
 public class Beater extends Player
 {
-    public Boolean isSuccessful()
+    public Beater (String name, int number)
     {
-        int count = 0;
-        int random=(int)(Math.random()*100);
-        Boolean check;
-
-        for (int i=1;i<=2;i++)
-        {
-            if (random<=40)
-                count++;
-        }
-        if (count>=1)
-            check=true;
-        else
-            check=false;
-        return check;
+        super(name, number);
+    }
+    public Boolean isSuccessful() {
+        Random random = new Random();
+        int chance = random.nextInt(100);
+        return chance <= 40;
     }
 }

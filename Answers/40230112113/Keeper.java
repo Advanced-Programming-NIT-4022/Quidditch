@@ -1,13 +1,14 @@
+import java.util.Random;
+
 public class Keeper extends Player
 {
-    public Boolean isSuccessful()
+    public Keeper(String name, int number)
     {
-        int random=(int)(Math.random()*100);
-        Boolean check;
-        if (random<=70)
-            check=true;
-        else
-            check=false;
-        return check;
+        super(name, number);
+    }
+    public Boolean isSuccessful() {
+        Random random = new Random();
+        int chance = random.nextInt(100);
+        return chance <= 70;
     }
 }
