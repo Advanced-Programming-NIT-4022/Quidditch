@@ -1,5 +1,10 @@
 public class Seeker extends Player implements Success {
 	@Override
-	public void isSuccessful() {
+	public boolean isSuccessful() {
+		if (chane() <= 5) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

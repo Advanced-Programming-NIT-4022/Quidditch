@@ -1,5 +1,10 @@
 public class Beater extends Player implements Success {
 	@Override
-	public void isSuccessful() {
+	public boolean isSuccessful() {
+		if (chane() <= 40) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
