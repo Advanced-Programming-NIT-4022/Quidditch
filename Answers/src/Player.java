@@ -1,4 +1,6 @@
 public class Player {
-    private String name;
-    private String number;
+    public String name;
+    public String number;
+    public int chance;
+
 }

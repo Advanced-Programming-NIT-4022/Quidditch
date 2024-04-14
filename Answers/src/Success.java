@@ -1,3 +1,3 @@
 public interface Success {
-    public void isSuccessful();
+    public boolean isSuccessful();
 }
