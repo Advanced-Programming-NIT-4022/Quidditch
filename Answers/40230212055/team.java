@@ -25,7 +25,7 @@ public class team {
     player beater21 = new beater();
     player beater22 = new beater();
 
-    public String team1 (int i) {
+    public String team1(int i) {
 
         if (seeker1.isSuccessful() == true) {
 
@@ -44,9 +44,10 @@ public class team {
         }
 
 
-        if (seeker1.isSuccessful() && keeper1.isSuccessful()) {
+        if (keeper1.isSuccessful()) {
 
-            if (chaser11.isSuccessful() || chaser12.isSuccessful() || chaser13.isSuccessful()) {
+            if ((chaser11.isSuccessful() && chaser12.isSuccessful()) || (chaser11.isSuccessful() && chaser13.isSuccessful()) ||
+                    (chaser13.isSuccessful() && chaser12.isSuccessful())) {
 
                 if (beater11.isSuccessful() || beater11.isSuccessful()) {
 
@@ -70,7 +71,7 @@ public class team {
     }
 
 
-    public String team2 (int i) {
+    public String team2(int i) {
 
         if (seeker2.isSuccessful() == true) {
 
@@ -89,9 +90,10 @@ public class team {
 
         }
 
-        if (seeker2.isSuccessful() && keeper2.isSuccessful()) {
+        if (keeper2.isSuccessful()) {
 
-            if (chaser21.isSuccessful() || chaser22.isSuccessful() || chaser23.isSuccessful()) {
+            if ((chaser21.isSuccessful() && chaser22.isSuccessful()) || (chaser21.isSuccessful() && chaser23.isSuccessful()) ||
+                    (chaser23.isSuccessful() && chaser22.isSuccessful())) {
 
                 if (beater21.isSuccessful() || beater22.isSuccessful()) {
 
