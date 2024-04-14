@@ -1,3 +1,5 @@
+package example;
+
 public class Player {
     public String name;
     public String number;

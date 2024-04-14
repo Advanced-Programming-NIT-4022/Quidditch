@@ -1,6 +1,9 @@
+package example;
+
+import example.Seeker;
+
 public class Team {
     public int goals=0;
-    public boolean won=false;
     Keeper keeper;
     Seeker seeker;
     Beater beater1,beater2;
@@ -9,16 +12,12 @@ public class Team {
         goals++;
     }
     public void Play(){
-        if(seeker.isSuccessful()){
-            won=true;
-            goals+=150;
-        }
         if(keeper.isSuccessful() && (beater1.isSuccessful() || beater2.isSuccessful()) && (chaser1.isSuccessful()?
                 chaser2.isSuccessful()&&chaser3.isSuccessful() : chaser2.isSuccessful()||chaser3.isSuccessful()) ){
             setGoal();
         }
     }
-    public Team(Beater[] beaters,Chaser[] chasers,Seeker seeker,Keeper keeper){
+    public Team(Beater[] beaters, Chaser[] chasers, Seeker seeker, Keeper keeper){
         this.beater1=beaters[0];
         this.beater2=beaters[1];
         this.seeker=seeker;
@@ -38,6 +37,6 @@ public class Team {
     }
     public void reset(){
         goals=0;
-        won=false;
+
     }
 }

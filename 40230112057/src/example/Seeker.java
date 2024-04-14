@@ -1,3 +1,8 @@
+package example;
+
+import example.Player;
+import example.random;
+
 public class Seeker extends Player implements Success{
     private int chance=5;
     @Override
