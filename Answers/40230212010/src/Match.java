@@ -1,32 +1,38 @@
-public class Match {
-    
-    Team team1;
-    Team team2;
+class Match {
+    private Team team1;
+    private Team team2;
+    private int rounds;
 
-    Match(Team team1, Team team2) {
+    public Match(Team team1, Team team2, int rounds) {
         this.team1 = team1;
         this.team2 = team2;
+        this.rounds = rounds;
     }
 
-    void start() {
-        for (int i = 0; i < 100; i++) {
-            team1.play();
+    public void start() {
+        for (int i = 0; i < rounds; i++) {
+            System.out.println("Round " + (i + 1) + " begins:");
+            
+            if (team1.play()) {
+                System.out.println("Team 1 wins with " + team1.getGoals() + " goals!");
+                return;
+            }
             team2.play();
+            if (team2.play()) {
+                System.out.println("Team 2 wins with " + team2.getGoals() + " goals!");
+                return;
+            }
+            System.out.println("End of Round " + (i + 1) + "\n");
         }
 
-        int team1Score = team1.getScore();
-        int team2Score = team2.getScore();
-
-        System.out.println("Team 1 score: " + team1Score);
-        System.out.println("Team 2 score: " + team2Score);
-
-        if (team1Score > team2Score) {
-            System.out.println("Team 1 wins!");
-        } else if (team2Score > team1Score) {
-            System.out.println("Team 2 wins!");
-        } else {
+        System.out.println("Final scores:");
+        System.out.println("Team 1 goals: " + team1.getGoals());
+        System.out.println("Team 2 goals: " + team2.getGoals());
+        if (team1.getGoals() == team2.getGoals()) {
             System.out.println("It's a draw!");
+        } else {
+            Team winner = (team1.getGoals() > team2.getGoals()) ? team1 : team2;
+            System.out.println("Winner: Team " + ((winner == team1) ? "1" : "2"));
         }
     }
-
 }
