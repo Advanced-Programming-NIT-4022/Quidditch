@@ -2,33 +2,29 @@ package org.example;
 
 import java.util.Random;
 
-class Player implements Success
+abstract class Player implements Success
 {
-    Random MakeRandomNumber = new Random();
-    int c = MakeRandomNumber.nextInt(100);
+
     String name;
     int number ;
-    public void setPlayer(String name, int number)
+    public Player(String name, int number)
     {
         this.name = name;
         this.number = number;
-    }
-    @Override
-    public int isSuccessful()
-    {
-        return 2;
     }
 }
 class Keeper extends Player
 {
-    public void setKeeper(String name, int number)
+
+    public Keeper(String name, int number)
     {
-        this.name = name;
-        this.number = number;
+        super(name, number);
     }
     @Override
     public int isSuccessful()
     {
+        Random MakeRandomNumber = new Random();
+        int c = MakeRandomNumber.nextInt(100);
         if (c < 70)
         {
             c = 1;
@@ -43,14 +39,16 @@ class Keeper extends Player
 class Seeker extends Player
 {
 
-    public void setSeeker(String name, int number)
+
+    public Seeker(String name, int number)
     {
-        this.name = name;
-        this.number = number;
+        super(name, number);
     }
     @Override
     public int isSuccessful()
     {
+        Random MakeRandomNumber = new Random();
+        int c = MakeRandomNumber.nextInt(100);
         if (c < 5)
         {
             c = 1;
@@ -64,14 +62,15 @@ class Seeker extends Player
 }
 class Chaser extends Player
 {
-    public void setChaser(String name, int number)
+    public Chaser(String name, int number)
     {
-        this.name = name;
-        this.number = number;
+        super(name, number);
     }
     @Override
     public int isSuccessful()
     {
+        Random MakeRandomNumber = new Random();
+        int c = MakeRandomNumber.nextInt(100);
         if (c < 30)
         {
             c = 1;
@@ -85,15 +84,15 @@ class Chaser extends Player
 }
 class Beater extends Player
 {
-    public void setBeater(String name, int number)
+    public Beater(String name, int number)
     {
-        this.name = name;
-        this.number = number;
+        super(name, number);
     }
-
     @Override
     public int isSuccessful()
     {
+        Random MakeRandomNumber = new Random();
+        int c = MakeRandomNumber.nextInt(100);
         if (c < 40)
         {
             c = 1;

@@ -1,19 +1,23 @@
 package org.example;
 
-public class Team extends Player
+public class Team
 {
-    Keeper keeper = new Keeper();
+    Keeper keeper;
     Seeker seeker;
-    Chaser[] chasers;
-    Beater[] beaters;
+    Chaser[] chasers = new Chaser[3];
+    Beater[] beaters = new Beater[2];
     int goal;
 
-    public void setTeam(Keeper keeper, Seeker seeker, Chaser[] chasers, Beater[] beaters)
+    public Team()
     {
-        this.keeper = keeper;
-        this.seeker = seeker;
-        this.chasers = chasers;
-        this.beaters = beaters;
+        super();
+        this.keeper = new Keeper("hosein" , 6);
+        this.seeker = new Seeker("hasan",5);
+        this.chasers[0] = new Chaser("amir",3);
+        this.chasers[1] = new Chaser("harry",10);
+        this.chasers[2] = new Chaser("tom",2);
+        this.beaters[0] = new Beater("ALI",1);
+        this.beaters[1] = new Beater("AmirAli",15);
         this.goal = 0;
     }
     private void setGoal()
@@ -45,7 +49,7 @@ public class Team extends Player
         {
             BB = 0;
         }
-        if (K ==1 && CHCH == 1 && BB == 1)
+        if (K == 1 && CHCH == 1 && BB == 1)
         {
             setGoal();
         }

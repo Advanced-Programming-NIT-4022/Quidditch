@@ -6,6 +6,12 @@ public class Match extends Team
     int ScoreTeam1 = 0;
     int ScoreTeam2 = 0;
     Team team2 = new Team();
+
+    public Match()
+    {
+        super();
+    }
+
     public void Start()
     {
         for (int i = 0; i < 100; i++)
@@ -31,7 +37,6 @@ public class Match extends Team
         {
             ScoreTeam2 +=10;
         }
-
     }
 
 }

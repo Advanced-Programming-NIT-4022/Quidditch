@@ -1,5 +1,6 @@
 package org.example;
 
-public interface Success {
+public interface Success
+{
     int isSuccessful();
 }
