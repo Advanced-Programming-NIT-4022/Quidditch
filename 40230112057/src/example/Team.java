@@ -8,7 +8,7 @@ public class Team {
     Seeker seeker;
     Beater beater1,beater2;
     Chaser chaser1,chaser2,chaser3;
-    public void setGoal(){
+    private void setGoal(){
         goals++;
     }
     public void Play(){
