@@ -1,5 +1,5 @@
 # Quidditch
-In this assignment, we will delve into Object-Oriented Programming (OOP) with a simple but appealing mini project. This mini project would be very enjoyable for Harry Potter fans, but if you haven't watched the film, don't worry; you don't need any pre-knowledge about this film to do this assignment. You can also use [this link](https://gustavus.edu/im/Spring/quidditch-rules.php#:~:text=Neither%20seekers%20nor%20snitched%20are,their%20broomstick%20at%20all%20times.) to read about Quidditch rules.
+In this assignment, w[README.md](README.md)e will delve into Object-Oriented Programming (OOP) with a simple but appealing mini project. This mini project would be very enjoyable for Harry Potter fans, but if you haven't watched the film, don't worry; you don't need any pre-knowledge about this film to do this assignment. You can also use [this link](https://gustavus.edu/im/Spring/quidditch-rules.php#:~:text=Neither%20seekers%20nor%20snitched%20are,their%20broomstick%20at%20all%20times.) to read about Quidditch rules.
 
 ## What Should I Do
 Your assignment is a bit different from the real game. You won't need to implement any GUI or complex logic; the whole logic will be handled by chance. Don't worry!
@@ -26,7 +26,7 @@ The beater has a 40% chance to stop chasers.
 - Create an interface called `Success` and put the method `isSuccessful` inside it. Don't forget to implement this interface with all of your roles. What's next?
 
 #### Team
-- Create a class for `Team`. This class contains players of your team (1 Keeper, 1 Seeker, 3 Chasers, and 2 Beaters) and the number of goals, which is zero at the beginning of the game.
+- Create a class for `Team`. This class contains players of your team (1 Keeper, 1 Seeker, 3 Chasers, and 2 Beater) and the number of goals, which is zero at the beginning of the game.
 - It has a method called `setGoal`, and after calling it, the number of goals increases by one. However, this method is private.
 - Also, we have another method called `play`. After calling this method, the team will start playing the game, and if the conditions are met, then the `setGoal` method will be called.
 
