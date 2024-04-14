@@ -1,9 +1,11 @@
 public class team {
   private player[] players;
   private int goals;
+  private String teamName;
 
   public team(String teamName)
   {
+    this.teamName = teamName;
     players = new player[7];
     players[0] = new keeper("Keeper", 1);
     players[1] = new seeker("Seeker", 2);
@@ -18,7 +20,7 @@ public class team {
     }
     goals = 0;
   }
-  private void setGoals()
+  public void setGoals()
   {
     goals++;
   }
@@ -27,6 +29,11 @@ public class team {
     int successFullKeepers=0;
     int successFullBeaters=0;
     int successFullChasers=0;
+    int successFullSeeker=0;
+    if(players[1] instanceof seeker && players[1].isSuccessfull())
+    {
+      successFullSeeker++;
+    }
     if(players[0] instanceof keeper && players[0].isSuccessfull())
     {
       successFullKeepers++;
@@ -46,7 +53,11 @@ public class team {
         successFullChasers++;
       }
     }
-    if(successFullKeepers>0 && successFullBeaters>=1 && successFullChasers>=2)
+    if(successFullSeeker==1)
+    {
+      successFullSeeker();
+    }
+    else if(successFullKeepers>0 && successFullBeaters>=1 && successFullChasers>=2)
     {
       setGoals();
     }
@@ -54,6 +65,11 @@ public class team {
   public int getGoals()
   {
     return goals;
+  }
+  public void successFullSeeker()
+  {
+    this.goals += 150;
+
   }
 }
 
