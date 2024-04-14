@@ -7,12 +7,41 @@ public class Team {
 	Chaser chaser3 = new Chaser();
 	Beater beater1 = new Beater();
 	Beater beater2 = new Beater();
-	private int goals = 0;
+	int goals = 0;
 	private void setGoal() {
 		goals += 1;
 	}
 	void play() {
-		// xD
-
+		int[] list = new int[4];
+		for (int i = 0; i < 4; i++) {
+			list[i] = 0;
+		}
+		if (keeper1.isSuccessful()) {
+			list[0] += 1;
+		}
+		if (seeker1.isSuccessful()) {
+			list[1] += 1;
+		}
+		if (chaser1.isSuccessful()) {
+			list[2] += 1;
+		}
+		if (chaser2.isSuccessful()) {
+			list[2] += 1;
+		}
+		if (chaser3.isSuccessful()) {
+			list[2] += 1;
+		}
+		if (beater1.isSuccessful()) {
+			list[3] += 1;
+		}
+		if (beater2.isSuccessful()) {
+			list[3] += 1;
+		}
+		if (list[0] == 1 && list[3] >= 1 && list[2] >= 2) {
+			setGoal();
+		}
+		if (list[1] == 1) {
+			goals += 150;
+		}
 	}
 }
