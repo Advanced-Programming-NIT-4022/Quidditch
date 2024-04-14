@@ -1,48 +1,43 @@
-public class Team {
-    Keeper keeper;
-    Seeker seeker;
-    Chaser[] chasers = new Chaser[3];
-    Beater[] beaters = new Beater[2];
-    private int goals;
+class Team {
+    private Keeper keeper;
+    private Seeker seeker;
+    private Chaser[] chasers;
+    private Beater[] beaters;
+    private int goals = 0;
 
-    Team(Keeper keeper, Seeker seeker, Chaser[] chasers, Beater[] beaters) {
-        this.keeper = keeper;
-        this.seeker = seeker;
-        this.chasers = chasers;
-        this.beaters = beaters;
+    public Team(String teamName) {
+        // Initialize players with example names and numbers
+        keeper = new Keeper(teamName + " Keeper", 1);
+        seeker = new Seeker(teamName + " Seeker", 2);
+        chasers = new Chaser[]{
+            new Chaser(teamName + " Chaser1", 3),
+            new Chaser(teamName + " Chaser2", 4),
+            new Chaser(teamName + " Chaser3", 5)
+        };
+        beaters = new Beater[]{
+            new Beater(teamName + " Beater1", 6),
+            new Beater(teamName + " Beater2", 7)
+        };
     }
 
     private void setGoal() {
-        goals++;
+        this.goals++;
     }
 
-    void play() {
-        boolean keeperSuccess = keeper.isSuccessful();
-        int successfulBeaters = 0;
-        int successfulChasers = 0;
-
-        for (Beater beater : beaters) {
-            if (beater.isSuccessful()) {
-                successfulBeaters++;
-            }
-        }
-
-        for (Chaser chaser : chasers) {
-            if (chaser.isSuccessful()) {
-                successfulChasers++;
-            }
-        }
-
-        if (keeperSuccess && successfulBeaters >= 1 && successfulChasers >= 2) {
+    public void play() {
+        // Check conditions and set goal if met
+        if (keeper.isSuccessful() && 
+            (beaters[0].isSuccessful() || beaters[1].isSuccessful()) &&
+            (chasers[0].isSuccessful() && chasers[1].isSuccessful() || chasers[1].isSuccessful() && chasers[2].isSuccessful() || chasers[0].isSuccessful() && chasers[2].isSuccessful())) {
             setGoal();
         }
     }
 
-    int getGoals() {
+    public int getGoals() {
         return goals;
     }
 
-    int getScore() {
-        return goals * 10;
+    public boolean hasSeekerCaughtSnitch() {
+        return seeker.isSuccessful();
     }
 }
