@@ -13,10 +13,10 @@ public class Player {
     protected int getRandomNumber(){
         return random.nextInt(101);
     }
-
 }
 
-//--------------------------------------------------------------------------
+//---------------------------------------------------------------------
+
 class Keeper extends Player implements Success {
     private boolean Saved;
 
@@ -29,14 +29,13 @@ class Keeper extends Player implements Success {
             Saved = true;
         }
     }
-
     @Override
     public boolean isSuccessful() {
         return Saved;
     }
 }
 
-//-----------------------------------------------------------------------
+//---------------------------------------------------------------------
 
 class Seeker extends Player implements Success {
     private boolean foundSnitch;
@@ -50,18 +49,14 @@ class Seeker extends Player implements Success {
             foundSnitch = true;
         }
     }
-
-    public boolean hasFoundSnitch() {
-        return foundSnitch;
-    }
-
     @Override
     public boolean isSuccessful() {
         return foundSnitch;
     }
 }
 
-//--------------------------------------------------------------------
+//---------------------------------------------------------------------
+
 class Chaser extends Player implements Success {
     private boolean Scored;
 
@@ -80,15 +75,15 @@ class Chaser extends Player implements Success {
     }
 }
 
-//----------------------------------------------------------------------
+//---------------------------------------------------------------------
 
 class Beater extends Player implements Success {
     private boolean Stopped;
+
     public Beater(String name, int number) {
         super(name, number);
         this.Stopped = false;
     }
-
     public void attemptToStopChaser() {
         if (getRandomNumber() <= 40 ) {
             Stopped = true;
@@ -99,6 +94,3 @@ class Beater extends Player implements Success {
         return Stopped;
     }
 }
-
-
-

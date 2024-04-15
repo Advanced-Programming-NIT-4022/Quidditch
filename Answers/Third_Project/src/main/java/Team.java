@@ -16,26 +16,26 @@ public class Team {
     }
 
     public void play(){
-
+        //game plays
         keeper.attemptToSaveGoal();
         chaser1.attemptToScoreGoal();
         chaser2.attemptToScoreGoal();
         chaser3.attemptToScoreGoal();
         beater1.attemptToStopChaser();
         beater2.attemptToStopChaser();
+        seeker.attemptToFindSnitch();
+        //result
+        boolean SnitchCatched = seeker.isSuccessful();
+        boolean condition = false;
+        boolean chasing = (chaser1.isSuccessful() && chaser2.isSuccessful()) || (chaser1.isSuccessful() && chaser3.isSuccessful()) || (chaser2.isSuccessful() && chaser3.isSuccessful());
+        boolean beating = (beater1.isSuccessful() || beater2.isSuccessful());
+        boolean keeping = keeper.isSuccessful();
+        condition = chasing && beating && keeping;
 
-
-
-
-            boolean condition = false;
-            boolean chasing = (chaser1.isSuccessful() && chaser2.isSuccessful()) || (chaser1.isSuccessful() && chaser3.isSuccessful()) || (chaser2.isSuccessful() && chaser3.isSuccessful());
-            boolean beating = (beater1.isSuccessful() || beater2.isSuccessful());
-            boolean keeping = keeper.isSuccessful();
-            condition = chasing && beating && keeping;
-            if (condition)
+            if (SnitchCatched){
+                goal += 150;
+            }
+            if (condition )
                 setgoal();
-        /*if (seeker.isSuccessful()){
-
-        }*/
     }
 }
