@@ -2,13 +2,13 @@ package org.example;
 
 public class Team {
     int goals=0;
-    Seeker teamSeeker;
-    Keeper teamKeeper;
-    Chaser teamChaser1;
-    Chaser teamChaser2;
-    Chaser teamChaser3;
-    Beater teamBeater1;
-    Beater teamBeater2;
+    Seeker teamSeeker = new Seeker();
+    Keeper teamKeeper = new Keeper();
+    Chaser teamChaser1 = new Chaser();
+    Chaser teamChaser2 = new Chaser();
+    Chaser teamChaser3 = new Chaser();
+    Beater teamBeater1 = new Beater();
+    Beater teamBeater2 = new Beater();
 
 
 
