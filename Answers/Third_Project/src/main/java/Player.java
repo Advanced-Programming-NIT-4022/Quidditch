@@ -3,69 +3,50 @@ import java.util.Random;
 public class Player {
     private String name;
     private int number;
+    protected Random random;
 
     public Player(String name, int number) {
         this.name = name;
         this.number = number;
+        this.random = new Random();
     }
-    /*public void setName(String name) {
-        this.name = name;
+    protected int getRandomNumber(){
+        return random.nextInt(101);
     }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }*/
 }
 
-
-
-
+//--------------------------------------------------------------------------
 class Keeper extends Player implements Success {
-    private int goalsSaved;
-    private Random random;
+    private boolean Saved;
 
     public Keeper(String name, int number) {
         super(name, number);
-        this.goalsSaved = 0;
-        this.random = new Random();
+        this.Saved = false;
     }
-
     public void attemptToSaveGoal() {
-        if (random.nextDouble() <= 0.7) {
-            saveGoal();
+        if (getRandomNumber() <= 70 ) {
+            Saved = true;
         }
-    }
-
-    private void saveGoal() {
-        goalsSaved++;
-    }
-
-    public int getGoalsSaved() {
-        return goalsSaved;
     }
 
     @Override
     public boolean isSuccessful() {
-        return goalsSaved > 0;
+        return Saved;
     }
 }
 
-
-
-
+//-----------------------------------------------------------------------
 
 class Seeker extends Player implements Success {
     private boolean foundSnitch;
-    private Random random;
 
     public Seeker(String name, int number) {
         super(name, number);
         this.foundSnitch = false;
-        this.random = new Random();
     }
-
     public void attemptToFindSnitch() {
-        if (random.nextDouble() <= 0.05) {
+        if (getRandomNumber() <= 5 ) {
             foundSnitch = true;
         }
     }
@@ -80,70 +61,42 @@ class Seeker extends Player implements Success {
     }
 }
 
-
-
-
+//--------------------------------------------------------------------
 class Chaser extends Player implements Success {
-    private int goalsScored;
-    private Random random;
+    private boolean Scored;
 
     public Chaser(String name, int number) {
         super(name, number);
-        this.goalsScored = 0;
-        this.random = new Random();
+        this.Scored = false;
     }
-
     public void attemptToScoreGoal() {
-        if (random.nextDouble() <= 0.3) {
-            scoreGoal();
+        if (getRandomNumber() <= 30 ) {
+            Scored = true;
         }
     }
-
-    private void scoreGoal() {
-        goalsScored++;
-    }
-
-    public int getGoalsScored() {
-        return goalsScored;
-    }
-
     @Override
     public boolean isSuccessful() {
-        return goalsScored > 0;
+        return Scored;
     }
 }
 
-
-
-
+//----------------------------------------------------------------------
 
 class Beater extends Player implements Success {
-    private int chasersStopped;
-    private Random random;
-
+    private boolean Stopped;
     public Beater(String name, int number) {
         super(name, number);
-        this.chasersStopped = 0;
-        this.random = new Random();
+        this.Stopped = false;
     }
 
     public void attemptToStopChaser() {
-        if (random.nextDouble() <= 0.4) {
-            stopChaser();
+        if (getRandomNumber() <= 40 ) {
+            Stopped = true;
         }
     }
-
-    private void stopChaser() {
-        chasersStopped++;
-    }
-
-    public int getChasersStopped() {
-        return chasersStopped;
-    }
-
     @Override
     public boolean isSuccessful() {
-        return chasersStopped > 0;
+        return Stopped;
     }
 }
 
