@@ -1,5 +1,5 @@
 public class beater extends player implements success{
-  private static final double stopChance = 0.4;
+  private static final double stopChance = 0.999999;
   public beater(String name, int number)
   {
     super(name, number);

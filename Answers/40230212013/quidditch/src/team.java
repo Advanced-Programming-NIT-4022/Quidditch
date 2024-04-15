@@ -39,16 +39,16 @@ public class team {
       successFullKeepers++;
     }
   
-  for(int i=2 ; i<5 ; i++)
-  {
-    if(players[i] instanceof beater && players[i].isSuccessfull())
-    {
-      successFullBeaters++;
-    }
-  }
-    for(int i=5 ; i<7 ; i++)
+    for(int i=2 ; i<5 ; i++)
     {
       if(players[i] instanceof chaser && players[i].isSuccessfull())
+      {
+        successFullBeaters++;
+      }
+    }
+    for(int i=5 ; i<7 ; i++)
+    {
+      if(players[i] instanceof beater && players[i].isSuccessfull())
       {
         successFullChasers++;
       }
@@ -71,5 +71,9 @@ public class team {
     this.goals += 150;
 
   }
+  public String getTeamName() {
+    return teamName;
+  }
+  
 }
 
