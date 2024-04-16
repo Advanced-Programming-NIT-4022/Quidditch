@@ -2,7 +2,10 @@ package org.example;
 
 import java.util.Scanner;
 
+
 public class MyApp {
+
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         for (; ; ) {
@@ -13,6 +16,7 @@ public class MyApp {
             switch (ans) {
                 case '1': {
                     continue;
+
                 }
                 case '2': {
                     return;

@@ -9,8 +9,9 @@ public class Keeper extends Player implements isSuccess{
         {
             isSuccessful = true;
         }
-
     }
-
-
+    public void Setname(String name)
+    {
+        this.name = name;
+    }
 }

@@ -10,4 +10,8 @@ public class Beater extends Player implements isSuccess{
         }
 
     }
+    public void Setname(String name)
+    {
+        this.name = name;
+    }
 }
