@@ -22,7 +22,6 @@ public class team {
         else if (Math.random()<kpr.ch && ( Math.random()<btr1.ch || Math.random()<btr2.ch ) && 
         (Math.random()<csr1.ch && Math.random()<csr2.ch) ) {
             setgoal();
-            
         }
     }
 }
