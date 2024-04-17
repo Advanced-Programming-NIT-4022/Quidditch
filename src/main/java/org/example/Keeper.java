@@ -1,4 +1,11 @@
 package org.example;
-
-public class Keeper extends Player{
+import java.lang.Math;
+public class Keeper extends Player {
+    Keeper(String name, int number) {
+        super(name, number);
+    }
+    @Override
+    public boolean isSuccessful(){
+        return 0.7 > Math.random();
+    }
 }
