@@ -2,39 +2,50 @@ package org.example;
 
 public class Team {
 
-    Keeper keeper1 = new Keeper();
-    Seeker seeker1 = new Seeker();
-    Chaser chaser1 = new Chaser();
-    Chaser chaser2 = new Chaser();
-    Chaser chaser3 = new Chaser();
-    Beater beater1 = new Beater();
-    Beater beater2 = new Beater();
+    private Keeper keeper;
+    private Seeker seeker;
+    private Chaser chaser1;
+    private Chaser chaser2;
+    private Chaser chaser3;
+    private Beater beater1;
+    private Beater beater2;
+    private int number_of_goals;
 
-    int number_of_goals = 0;
+    public Team() {
+        this.keeper = new Keeper("keeper", 1, 70);
+        this.seeker = new Seeker("seeker", 1, 5);
+        this.chaser1 = new Chaser("chaser", 1, 30);
+        this.chaser2 = new Chaser("chaser", 2, 30);
+        this.chaser3 = new Chaser("chaser", 3, 30);
+        this.beater1 = new Beater("beater", 1, 40);
+        this.beater2 = new Beater("beater", 2, 40);
+        this.number_of_goals = 0;
+    }
 
-    private void setGoal(){
+    private void setGoal() {
         number_of_goals++;
     }
 
-
-
-    public String goldenSnitch(){
-        if(seeker1.isSuccessful()){
-            number_of_goals+=150;
-            return "Golden Snitch";
-        }
-        return "Nothing much";
+    public int getGoal() {
+        return number_of_goals;
     }
 
 
+    public boolean goldenSnitch() {
+        if (seeker.isSuccessful()) {
+            number_of_goals += 150;
+            return true;
+        }
+        return false;
+    }
 
-    public void play(){
 
-        if(keeper1.isSuccessful() &&
+    public void play() {
+
+        if (keeper.isSuccessful() &&
                 (beater1.isSuccessful() || beater2.isSuccessful()) &&
-                ((chaser1.isSuccessful() && chaser2.isSuccessful())||(chaser1.isSuccessful() && chaser3.isSuccessful())
-        ||(chaser2.isSuccessful()&&chaser3.isSuccessful())))
-        {
+                ((chaser1.isSuccessful() && chaser2.isSuccessful()) || (chaser1.isSuccessful() && chaser3.isSuccessful())
+                        || (chaser2.isSuccessful() && chaser3.isSuccessful()))) {
             setGoal();
         }
     }

@@ -2,7 +2,7 @@ package org.example;
 
 public class Seeker extends Player{
 
-    public Seeker(){
-        this.chance = 5;
+    public Seeker(String name , int number , int chance){
+        super(name,number,chance);
     }
 }
