@@ -20,7 +20,7 @@ public class Team {
 
     public String goldenSnitch(){
         if(seeker1.isSuccessful()){
-            number_of_goals=150;
+            number_of_goals+=150;
             return "Golden Snitch";
         }
         return "Nothing much";
