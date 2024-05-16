@@ -6,27 +6,27 @@ Your assignment is a bit different from the real game. You won't need to impleme
 
 We have two teams. Each team has a keeper, a seeker, 3 chasers, and 2 beaters. You can read about each role's responsibilities in the above link, so let's talk about implementing the project. Each of these roles has a name, number, and each one has a method called `isSuccessful`. The chance of success varies for each one. Let's start with the keeper.
 
-### Keeper
+### example.Keeper
 The keeper has a 70% chance to save a hanging goal.
 
-### Seeker
+### example.Seeker
 The seeker has a 5% chance to find the golden snitch.
 
-### Chaser
+### example.Chaser
 The chaser has a 30% chance to score a goal.
 
-### Beater
+### example.Beater
 The beater has a 40% chance to stop chasers.
 
 ## How to Implement
 
 ### Classes
-- Create a class for each role (Keeper, Seeker, etc.).
-- Create a class called `Player` and make all roles inherit this class.
-- Create an interface called `Success` and put the method `isSuccessful` inside it. Don't forget to implement this interface with all of your roles. What's next?
+- Create a class for each role (example.Keeper, example.Seeker, etc.).
+- Create a class called `example.Player` and make all roles inherit this class.
+- Create an interface called `example.Success` and put the method `isSuccessful` inside it. Don't forget to implement this interface with all of your roles. What's next?
 
-#### Team
-- Create a class for `Team`. This class contains players of your team (1 Keeper, 1 Seeker, 3 Chasers, and 2 Beaters) and the number of goals, which is zero at the beginning of the game.
+#### example.Team
+- Create a class for `example.Team`. This class contains players of your team (1 example.Keeper, 1 example.Seeker, 3 Chasers, and 2 Beaters) and the number of goals, which is zero at the beginning of the game.
 - It has a method called `setGoal`, and after calling it, the number of goals increases by one. However, this method is private.
 - Also, we have another method called `play`. After calling this method, the team will start playing the game, and if the conditions are met, then the `setGoal` method will be called.
 
@@ -36,8 +36,8 @@ When the keeper of the team is successful in saving the goal, at least one beate
 ##### Winning Conditions:
 When a seeker of a team finds the golden snitch, the team will get 150 scores and will win the match. Otherwise, the team with the most goals will win the match.
 
-#### Match
-After you've created the `Team` class, it's time for the `Match` class. In this class, you will need to create two teams initially. Then, you create a method called `start`. This method will start the game.
+#### example.Match
+After you've created the `example.Team` class, it's time for the `example.Match` class. In this class, you will need to create two teams initially. Then, you create a method called `start`. This method will start the game.
 
 ##### Game Starting:
 The game consists of 100 rounds. In each round, both teams will play, and after finishing the game, the scores of both teams will be shown, and also the winning team will be shown as the winner. Don't forget that the game can also end in a draw.
